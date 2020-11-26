@@ -1,0 +1,15 @@
+numbers = []
+squares = []
+cubes = []
+
+start = 1
+end = 10
+
+for n in range(start, end + 1):
+    numbers.append(n)
+    squares.append(n ** 2)
+    cubes.append(n ** 3)
+
+print('numbers: ', numbers)
+print('squares: ', squares)
+print('cubes: ', cubes)
