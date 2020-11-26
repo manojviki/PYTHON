@@ -1,0 +1,62 @@
+import random
+import time
+
+
+# [EXAMPLE 1]
+def countdown(num):
+    print('start countdown')
+    while num > 0:
+        yield num
+        num = num - 1
+
+
+values = countdown(5)
+for x in values:
+    print(x)
+
+
+# [EXAMPLE 2]
+def numbers(num):
+    n = 1
+    while n <= num:
+        yield n
+        n = n + 1
+
+
+values = numbers(5)
+for x in values:
+    print(x)
+
+# [EXAMPLE 3]
+
+
+names = ['sunny', 'bunny', 'chinny', 'vinny']
+subjects = ['python', 'java', 'blockchsin']
+
+
+def people_list(num_people):
+    results = []
+    for i in range(num_people):
+        person = {
+            'id': i,
+            'name': random.choice(subjects)
+        }
+        results.append(person)
+        return results
+
+
+def people_generator(num_people):
+    for i in range(num_people):
+        person = {
+            'id': i,
+            'name': random.choice(names),
+            'major': random.choice(subjects)
+        }
+        yield person
+
+
+t1 = time.time()
+people = people_generator(100000000)
+t2 = time.time()
+
+print('Took{}'.format(t2 - t1))
