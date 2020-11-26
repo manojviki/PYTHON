@@ -1,0 +1,11 @@
+list1=['amit','shukla',21,'newdelhi']
+list2=['aman','shukla',21,'mumbai']
+
+print('list1: ',list1)
+print('list2: ',list2)
+
+print('elements not exist in list2: ')
+print(list(set(list1)-set(list2)))
+
+print('elements not exist in list1: ')
+print(list(set(list2)-set(list1)))
