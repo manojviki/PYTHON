@@ -1,0 +1,66 @@
+# [EXAMPLE 1]
+def decor1(func):
+    def inner():
+        x = func()
+        return x * x
+
+    return inner
+
+
+def decor(func):
+    def inner():
+        x = func()
+        return 2 * x
+
+    return inner
+
+
+@decor1
+@decor
+def num():
+    return 10
+
+
+print(num())
+
+
+# [EXAMPLE 2]
+def decor(func):
+    def inner(name):
+        if name == 'sunny':
+            print('hello sunny bad morning')
+        else:
+            func(name)
+
+    return inner
+
+
+@decor
+def wish(name):
+    print('hello', name, 'good morning')
+
+
+wish('durga')
+wish('ravi')
+wish('sunny')
+
+
+# [EXAMPLE3]
+def smart_divison(func):
+    def inner(a, b):
+        print('we are dividing', a, 'with', b)
+        if b == 0:
+            print('oops we cannot divide')
+        else:
+            return func(a, b)
+
+    return inner
+
+
+@smart_divison
+def divison(a, b):
+    return a / b
+
+
+print(divison(20, 2))
+print(divison(20, 0))
