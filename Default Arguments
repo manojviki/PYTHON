@@ -1,0 +1,22 @@
+def wish(name='guest'):
+    print('hello', name, 'good morning')
+
+
+wish('manoj')
+
+
+# [example 2]
+def validate_email(fname, lname, email, checker1='@', checker2='.com'):
+    print('*********', checker1, checker2)
+    frst_lst = '%s%s' % (fname, lname)
+    if frst_lst == email.split('@')[0]:
+        print('email is in required format of fname and lname')
+        if checker1 in email and checker2 in email:
+            print('email satisfied required checkers')
+        else:
+            print('checker condition failed')
+    else:
+        print('invalid as email and not in required format of fname and lname')
+
+
+validate_email('mk', 'viki0213', 'mkviki0213@gmail.com')
