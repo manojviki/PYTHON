@@ -1,0 +1,16 @@
+sub1 = int(input('enter the first :'))
+sub2 = int(input('enter the second : '))
+sub3 = int(input('enter the third : '))
+sub4 = int(input('enter the fourth : '))
+sub5 = int(input('enter the fifth : '))
+avg = (sub1 + sub2 + sub3 + sub4 + sub5) / 5
+if avg >= 90:
+    print('grade A')
+elif 80 <= avg < 90:
+    print('grade B')
+elif 70 <= avg < 80:
+    print('grade C')
+elif 60 <= avg < 70:
+    print('grade D')
+else:
+    print('grade F')
