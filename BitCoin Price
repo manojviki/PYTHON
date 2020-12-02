@@ -1,0 +1,12 @@
+# Fetches BitCoin price from CoinDesk
+# https://www.coindesk.com/price/
+# Code adapted from https://github.com/dursk/bitcoin-price-api
+
+import requests
+
+def get_price(currency='USD'):
+    url = 'https://api.coindesk.com/v1/bpi/currentprice/{}.json'.format(currency)
+    response = requests.get(url)
+    response.raise_for_status()
+    price = response.json()['bpi'][currency]['rate_float']
+    return price
